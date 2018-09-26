@@ -1,0 +1,118 @@
+% \IUref{IUAdmPS}{Administrar Planta de Selección}
+% \IUref{IUModPS}{Modificar Planta de Selección}
+% \IUref{IUEliPS}{Eliminar Planta de Selección}
+
+% 
+
+
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU17}{Inscribir a Seminario}{
+		Ayudar a que los Estudiantes que están por terminar la carrera se puedan inscribir en un Seminario de titulación.
+	}
+		\UCitem{Versión}{0.1}
+		\UCitem{Actor}{Recepcionista}
+		\UCitem{Propósito}{Que la recepcionista pueda añadir un cliente nuevo al sistema.}
+		\UCitem{Entradas}{Nombre, Apellido Paterno, Apellido Materno, CURP, Fecha de Nacimiento, Género, Correo, Teléfono, Tipo de persona, RFC, Dirección Física, Dirección Fiscal, Razón Social, Enfermedades Cardiovasculares, Enfermedades Respiratorias, Enfermedades Crónicas, Enfermedades Digestivas, Fracturas y Alergias.}
+		\UCitem{Origen}{Teclado}
+		\UCitem{Salidas}{Cliente registrado, datos del cliente, usuario registrado y datos del usuario.}
+		\UCitem{Destino}{Pantalla.}
+		\UCitem{Precondiciones}{La recepcionista puede añadir un nuevo cliente al sistema si y sólo si el aspirante a cliente es mayor de edad.}
+		\UCitem{Postcondiciones}{La recepcionista habrá registrado al cliente en el sistema como un cliente nuevo con él mismo como usuario asociado, si el cliente cumplió con el requisito de ser mayor de edad.}
+		\UCitem{Errores}{}
+		\UCitem{Tipo}{Caso de uso primario}
+		\UCitem{Observaciones}{}
+		\UCitem{Autor}{Raúl Kevin Monteón Valdés.}
+	\end{UseCase}
+
+	\begin{UCtrayectoria}{Principal}
+		\UCpaso 1. Despliega los clientes registrados, ordenados por fecha de registro vía la  \IUref{IU01}{Pantalla de listado de clientes registrados en el sistema}.
+		
+		\UCpaso[\UCactor] 2. Hace clic en el botón Agregar Cliente.
+		
+		\UCpaso 3. Despliega el formulario de datos principales del aspirante a usuario  \IUref{IU02}{Pantalla de registro de clientes y usuarios}.
+		
+		\UCpaso[\UCactor] 4. Introduce Nombre, Apellido Paterno, Apellido Materno, CURP, Fecha de Nacimiento, Género, Correo, Teléfono, Tipo de persona, RFC, Dirección Física, Dirección Fiscal y Razón Social del aspirante a cliente.
+		
+		\UCpaso 5. Verifica que el aspirante a cliente sea mayor de edad con base en su fecha de nacimiento por la regla  \BRref{BR001}{Determinar si un aspirante a cliente puede ser registrado en el sistema} \Trayref{A}.
+		
+		\UCpaso 6. Verifica que el CURP del aspirante a cliente sea válido con base en la regla  \BRref{BR002}{Determinar si un CURP es válido} \Trayref{B}.
+		
+		\UCpaso 7. Extrae los datos del CURP (iniciales de nombre y apellidos, fecha de nacimiento, entidad de nacimiento, género).
+		
+		\UCpaso 8. Verifica que el los datos del usuario coincidan con los datos extraídos del CURP.
+		
+		\UCpaso 9. Verifica que el correo introducido tiene un formato correcto con base en la regla  \BRref{BR003}{Determinar si un correo tiene el formato correcto} \Trayref{C}.
+		
+		\UCpaso 10. Verifica que teléfono introducido tiene un formato correcto con base en la regla  \BRref{BR004}{Determinar si un teléfono tiene el formato correcto} \Trayref{D}.
+		
+		\UCpaso 11. Verifica que el RFC introducido es congruente con el CURP introducido con base en la regla  \BRref{BR005}{Determinar si un RFC es congruente con un CURP} \Trayref{E}.
+		
+		\UCpaso 12. Despliega el formulario de datos médicos vía la \IUref{IU03}{Pantalla de registro de datos médicos}.
+		
+		\UCpaso[\UCactor] 13. Introduce las Enfermedades Cardiovasculares, Enfermedades Respiratorias, Enfermedades Crónicas, Enfermedades Digestivas, Fracturas y Alergias que padezca el usuario.		
+		
+		\UCpaso[\UCactor] 14. Confirma el registro del cliente.
+		
+		\UCpaso 15. Registra datos del cliente.
+		
+		\UCpaso 16. Notifica que se hizo un registro exitoso vía la \IUref{IU04}{Pantalla de notificación de registro exitoso}.
+		
+		\UCpaso 17. Despliega los clientes registrados, ordenados por fecha de registro vía la  \IUref{IU01}{Pantalla de listado de clientes registrados en el sistema}.
+			
+	\end{UCtrayectoria}
+		
+		\begin{UCtrayectoriaA}{A}{La recepcionista intenta registrar un cliente que no cumple con las precondiciones}
+		
+			\UCpaso Muestra el Mensaje {\bf MSG1-}``El aspirante a cliente con el CURP [{\em CURP del aspirante a cliente}] no puede ser registrado en el sistema.''.
+			\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+			\UCpaso[] Termina el caso de uso.
+		\end{UCtrayectoriaA}
+		
+		\begin{UCtrayectoriaA}{B}{Los datos del aspirante a cliente no coinciden con los extraídos del CURP}
+			\UCpaso Muestra el Mensaje {\bf MSG2-}``Los datos del aspirante a cliente con el CURP [{\em CURP del aspirante a cliente}] no coinciden con el CURP introducido.''.
+			\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+			\UCpaso[] Termina el caso de uso.
+		\end{UCtrayectoriaA}
+		
+		
+		\begin{UCtrayectoriaA}{C}{El CURP introducido no es válido}
+			\UCpaso Muestra el Mensaje {\bf MSG3-}``El CURP [{\em CURP del aspirante a cliente}] no es válido.''.
+			\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+			\UCpaso[] Termina el caso de uso.
+		\end{UCtrayectoriaA}
+		
+		
+		\begin{UCtrayectoriaA}{D}{La recepcionista abandona la operación}
+			\UCpaso La recepcionista abandona la operación debido a que el cliente no puede continuar proporcionando sus datos.
+			\UCpaso[\UCactor] Oprime el botón \IUbutton{Salir}.
+			\UCpaso Cierra la sesión del usuario.
+			\UCpaso Continua en el paso \ref{CU17Login} del \UCref{CU01}.
+		\end{UCtrayectoriaA}		
+		
+		
+		\begin{UCtrayectoriaA}{E}{El El RFC no es congruente con el CURP}
+			\UCpaso Muestra el Mensaje {\bf MSG4-}``El RFC [{\em RFC del aspirante a cliente}] no es congruente con el CURP [{\em CURP del aspirante a cliente}].''.
+			\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+			\UCpaso[] Termina el caso de uso.
+		\end{UCtrayectoriaA}
+		
+		
+		\begin{UCtrayectoriaA}{F}{El teléfono introducido no es válido}
+			\UCpaso Muestra el Mensaje {\bf MSG5-}``El teléfono [{\em teléfono del aspirante a cliente}] no es válido.''.
+			\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+			\UCpaso[] Termina el caso de uso.
+		\end{UCtrayectoriaA}
+		
+		
+		\begin{UCtrayectoriaA}{G}{El correo introducido no es válido}
+			\UCpaso Muestra el Mensaje {\bf MSG6-}``El correo [{\em correo del aspirante a cliente}] no es válido.''.
+			\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+			\UCpaso[] Termina el caso de uso.
+		\end{UCtrayectoriaA}
+		
+
+		
+%-------------------------------------- TERMINA descripción del caso de uso.

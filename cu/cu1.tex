@@ -1,0 +1,80 @@
+% \IUref{IUAdmPS}{Administrar Planta de Selección}
+% \IUref{IUModPS}{Modificar Planta de Selección}
+% \IUref{IUEliPS}{Eliminar Planta de Selección}
+
+% 
+
+
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU1}{Asignar Membresía}{
+		Ayudar al ejecutivo vendedor a asignar un tipo de membresía a un usuario.
+	}
+		\UCitem{Versión}{0.1}
+		\UCitem{Actor}{Ejecutivo Vendedor}
+		\UCitem{Propósito}{Que el ejecutivo vendedor asocie un tipo de membresía para un determinado usuario, cuando éste desee hacer uso de las instalaciones, para que se pueda generar una orden de pago y se active la membresía del usuario.}
+		\UCitem{Entradas}{Cliente al que se le asignará la membresía, tipo de membresía, duración de la membresía}
+		\UCitem{Origen}{Teclado y mouse}
+		\UCitem{Salidas}{Membresías disponibles, información sobre las membresías (servicios, cursos, áreas), mensaje de venta exitosa, tipo de membresía que se le asignó al usuario, servicios y cursos de los que dispone el usuario, orden de pago indicando el número de cuenta y monto a pagar, fecha límite para pagar, referencia.}
+		\UCitem{Destino}{Pantalla}
+		\UCitem{Precondiciones}{El usuario debe estar registrado en el sistema y no debe contar con una membresía vigente.}
+		\UCitem{Postcondiciones}{El usuario quedará asociado a un tipo de membresía}
+		\UCitem{Errores}{E1: El usuario ya posee con una membresía vigente.}
+		\UCitem{Tipo}{Caso de uso que extiende del CU1}
+		\UCitem{Observaciones}{}
+		\UCitem{Autor}{Marco Antonio Olivares García.}
+	\end{UseCase}
+
+	\begin{UCtrayectoria}{Principal}
+		\UCpaso[\UCactor] Da clic en el botón \IUbutton{Asignar membresía} en el caso de uso {CU17Login} mediante la \IUref{IU23}{Pantalla de Consultas de Clientes}
+		\UCpaso Verifica que el usuario no tenga una membresía activa. \Trayref{A}
+		\UCpaso Consulta las membresías registradas.
+		\UCpaso Muestra las membresías registradas mediante la \IUref{IU23}{Pantalla de Membresías disponibles}.
+		\UCpaso[\UCactor] Da clic en en boton \IUbutton{Información}.
+		\UCpaso Consulta la información de la membresía seleccionada.
+		\UCpaso Muestra la información de la membresía seleccionada.
+		\UCpaso[\UCactor] Cierra la información mostrada acerca de la membresía.
+		\UCpaso[\UCactor] Selecciona la duración de la membresía.
+		\UCpaso Calcula el monto a pagar.
+		\UCpaso Muestra el monto a pagar.
+		\UCpaso[\UCactor] Da clic en en boton \IUbutton{Confirmar}.
+		\UCpaso Informa que se asignó de forma exitosa la membresía al usuario, muestra el nombre de la membresía, la duración de la misma, monto a pagar, número de cuenta bancaria y fecha límite para pagar  mediante la \IUref{IU24}{Pantalla de asignación de membresía exitosa}.
+		\UCpaso[\UCactor] Da clic en en boton \IUbutton{Finalizar}.
+		\end{UCtrayectoria}
+		
+		
+		
+		%\UCpaso Consulta la lista de membresías registradas.
+		%\UCpaso Despliega la lista de todos los usuarios que están asociados con el cliente seleccionado.
+		
+		
+		
+		
+		
+		%\UCpaso Despliega la lista de todos los usuarios que están asociados con el cliente seleccionado.
+		%\UCpaso[\UCactor] Selecciona el nombre del usuario al que le asignará la membresía mediante la    \IUref{IU23}{Pantalla de Registro de Ventas}\label{CU17Login}.
+		%\UCpaso[\UCactor] Da clic en el botón \IUbutton{Siguiente}.
+		%\UCpaso Despliega la lista de las membresías disponibles en el sistema.
+		%\UCpaso[\UCactor] Selecciona la membresía que le asignará al usuario mediante la    \IUref{IU23}{Pantalla de Registro de Ventas}\label{CU17Login}.
+		%\UCpaso[\UCactor] Da clic en el botón \IUbutton{Siguiente}.
+		%\UCpaso Solicita la fecha de término de la membresía.
+		%\UCpaso[\UCactor] Introduce la fecha de término de la membresía  mediante la    \IUref{IU23}
+%{Pantalla de Registro de Ventas}\label{CU17Login}.
+%%		\UCpaso[\UCactor] Da clic en el botón \IUbutton{Asignar membresía}. mediante la    \IUref{IU23}%%{Pantalla de Registro de Ventas}\label{CU17Login}.
+%		\UCpaso Pregunta al actor si está seguro de querer asignar dicha membresía al usuario.
+%		\UCpaso[\UCactor] Da clic en el botón \IUbutton{Sí}. mediante la    \IUref{IU23}{Pantalla de Registro de Ventas}\label{CU17Login}.
+%		\UCpaso Calcula el monto a pagar por la membresía.
+%		\UCpaso Asigna la membresía al usuario seleccionado.
+%		\UCpaso Informa que se asignó la membresía exitosamente e indica el monto a pagar.
+%	\end{UCtrayectoria}
+			
+		
+		\begin{UCtrayectoriaA}{A}{El usuario tiene una membresía activa.}
+			\UCpaso Muestra el Mensaje ``El usuario ya posee una membresía activa''.
+			\UCpaso[\UCactor] Oprime el botón \IUbutton{Salir}.
+			\UCpaso[] Termina el caso de uso.
+		\end{UCtrayectoriaA}
+
+%-------------------------------------- TERMINA descripción del caso de uso.

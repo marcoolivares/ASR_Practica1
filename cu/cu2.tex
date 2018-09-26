@@ -1,0 +1,47 @@
+% \IUref{IUAdmPS}{Administrar Planta de Selección}
+% \IUref{IUModPS}{Modificar Planta de Selección}
+% \IUref{IUEliPS}{Eliminar Planta de Selección}
+
+% 
+
+
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU2}{Registrar ingreso a área}{
+		Registrar cuando un usuario acceda a una determinada área, así como la hora a la que ingresa.
+	}
+		\UCitem{Versión}{0.1}
+		\UCitem{Actor}{Usuario}
+		\UCitem{Propósito}{Almacenar en un registro la hora de entrada del usuario a un área, para saber si tiene acceso a la misma, y en dado caso contrario, se le cobre un cargo extra por el uso del área}
+		\UCitem{Entradas}{Curp del usuario}
+		\UCitem{Origen}{Tarjeta del usuario}
+		\UCitem{Salidas}{}
+		\UCitem{Destino}{}
+		\UCitem{Precondiciones}{El usuario debe estar registrado en el sistema y debe contar con una tarjeta de usuario}
+		\UCitem{Postcondiciones}{El área a la que ingrese contará con un usuario más.}
+		\UCitem{Errores}{}
+		\UCitem{Tipo}{Caso de uso primario}
+		\UCitem{Observaciones}{}
+		\UCitem{Autor}{Marco Antonio Olivares García.}
+	\end{UseCase}
+
+	\begin{UCtrayectoria}{Principal}
+		%\UCpaso Despliega la lista de los clientes registrados en el sistema.
+		\UCpaso[\UCactor] Pasa por los sensores ubicados en la entrada del área.    
+		\UCpaso Consulta la información correspondiente del usuario al que está asociada la tarjeta que pasó por los sensores.
+		\UCpaso Registra la hora en la cual el usuario está ingresando al área y el curp de usuario de la tarjeta.
+		\UCpaso Verifica que el usuario tenga acceso al área. \Trayref{A}
+	\end{UCtrayectoria}
+
+			
+		
+		\begin{UCtrayectoriaA}{A}{El usuario no tiene acceso al área}
+			\UCpaso En el caso de uso \UCref{CU3} se calculará el costo adicional que tendrá el uso del área.
+			\UCpaso[] Termina el caso de uso.
+		\end{UCtrayectoriaA}
+		
+		\
+		
+%-------------------------------------- TERMINA descripción del caso de uso.

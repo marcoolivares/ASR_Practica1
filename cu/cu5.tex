@@ -1,0 +1,40 @@
+% \IUref{IUAdmPS}{Administrar Planta de Selección}
+% \IUref{IUModPS}{Modificar Planta de Selección}
+% \IUref{IUEliPS}{Eliminar Planta de Selección}
+
+% 
+
+
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU5}{Consultar uso de área.}{
+		Facilitar el control de los usuarios que se encuentran usando un área.
+	}
+		\UCitem{Versión}{0.1}
+		\UCitem{Actor}{Encargado de área.}
+		\UCitem{Propósito}{Que el encargado de área pueda saber cuántos y qué usuarios se encuentran usando una determinada área.}
+		\UCitem{Entradas}{Nombre del área}
+		\UCitem{Origen}{Mouse}
+		\UCitem{Salidas}{Número de usuarios que se encuentran usando el área, usuarios que están usando el área.}
+		\UCitem{Destino}{Pantalla}
+		\UCitem{Precondiciones}{Que el área exista}
+		\UCitem{Postcondiciones}{}
+		\UCitem{Errores}{}
+		\UCitem{Tipo}{Caso de uso primario}
+		\UCitem{Observaciones}{}
+		\UCitem{Autor}{Marco Antonio Olivares García}
+	\end{UseCase}
+
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso Muestra la lista de áreas registradas en la sucursal.
+		\UCpaso Muestra la lista de áreas registradas en la sucursal.
+		\UCpaso[\UCactor] Elige el área a consultar vía la  \IUref{IU23}{Pantalla de Control de Acceso}\label{CU17Login}.
+		\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+		\UCpaso Consulta el registro de acceso al área seleccionada.
+		\UCpaso Cuenta el número de usuarios que registraron su entrada al área pero que aún no han registrado su salida.
+		\UCpaso Muestra todos los usuarios que registraron su entrada al área pero que aún no han registrado su salida, así como el número de usuarios que se encuentran usando el área.
+		
+		
+	\end{UCtrayectoria}

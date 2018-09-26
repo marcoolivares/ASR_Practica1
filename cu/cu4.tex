@@ -1,0 +1,60 @@
+% \IUref{IUAdmPS}{Administrar Planta de Selección}
+% \IUref{IUModPS}{Modificar Planta de Selección}
+% \IUref{IUEliPS}{Eliminar Planta de Selección}
+
+% 
+
+
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU4}{Registrar pago de membresía}{
+		Ayudar al ejecutivo vendedor a registrar el pago de una membresía efectuado por el cliente.
+	}
+		\UCitem{Versión}{0.1}
+		\UCitem{Actor}{Ejecutivo Vendedor}
+		\UCitem{Propósito}{Que el ejecutivo vendedor registre el pago de una membresía una vez que el usuario haya efectuado el pago correspondiente, para que su membresía quede activa y pueda hacer uso de las instalaciones y servicios del gimnasio.}
+		\UCitem{Entradas}{nombre del cliente, forma de pago, persona que registra el pago, monto pagado, número de referencia, fecha en que se realizó el pago}
+		\UCitem{Origen}{Teclado y mouse.}
+		\UCitem{Salidas}{Mensaje de pago exitoso, vendedores ejecutivos que trabajan en la sucursal.}
+		\UCitem{Destino}{Pantalla}
+		\UCitem{Precondiciones}{El usuario debe estar registrado y debe haber comprado una membresía.}
+		\UCitem{Postcondiciones}{La membresía del usuario quedará activa.}
+		\UCitem{Errores}{}
+		\UCitem{Tipo}{Caso de uso que extiende del CU1 Consultar clientes.}
+		\UCitem{Observaciones}{}
+		\UCitem{Autor}{Marco Antonio Olivares García.}
+	\end{UseCase}
+
+\begin{UCtrayectoria}{Principal}
+		\UCpaso[\UCactor] Da clic en el botón \IUbutton{Registrar pago} en el caso de uso {CU17Login} mediante la \IUref{IU23}{Pantalla de Consultas de Clientes}
+		\UCpaso Consulta los ejecutivos vendedores que trabajan en la sucursal.
+		\UCpaso Despliega los ejecutivos vendedores que trabajan en la sucursal mediante la \IUref{IU23}{Pantalla de Registro de pagos de membresías}.
+		\UCpaso[\UCactor] Selecciona la forma de pago. \Trayref{A}
+		\UCpaso Solicita el monto pagado.
+		\UCpaso[\UCactor] Introduce la cantidad pagada.
+		\UCpaso Solicita el nombre del ejecutivo vendedor que está registrando el pago.
+		\UCpaso[\UCactor] Selecciona el nombre del ejecutivo vendedor que está registrando el pago.
+		\UCpaso[\UCactor] Da clic en el botón \IUbutton{Confirmar}
+		\UCpaso Verifica que los datos de entrada correspondan al tipo de dato solicitado. \Trayref{B}
+		\UCpaso Informa que se registró el pago de forma exitosa.
+		\UCpaso[\UCactor] Da clic en en boton \IUbutton{Finalizar}.
+		\end{UCtrayectoria}
+		
+		\begin{UCtrayectoriaA}{A}{El ejecutivo vendedor elige la forma de pago por depósito bancario.}
+			\UCpaso Solicita la fecha de pago.
+			\UCpaso[\UCactor] Introduce la fecha de pago.
+			\UCpaso Solicita el número de transacción.
+			\UCpaso[\UCactor] Introduce el número de transacción.
+			\UCpaso Solicita el monto pagado.
+			\UCpaso[\UCactor] Introduce el monto pagado.
+			\UCpaso Continua en el paso 7 del {CU4}
+		\end{UCtrayectoriaA}
+		
+		\begin{UCtrayectoriaA}{B}{Los datos de entrada no corresponden con el tipo de dato solicitado}
+			\UCpaso Muestra el Mensaje ``Error en los datos de entrada''.
+			\UCpaso Continua en el paso 4 del {CU4}
+		\end{UCtrayectoriaA}
+
+%-------------------------------------- TERMINA descripción del caso de uso.
