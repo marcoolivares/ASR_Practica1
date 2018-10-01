@@ -1,28 +1,36 @@
-\BOOKMARK [0][-]{chapter.1}{Modelo de Negocios}{}% 1
-\BOOKMARK [1][-]{section.1.1}{Glosario de T\351rminos del Negocio}{chapter.1}% 2
-\BOOKMARK [1][-]{section.1.2}{Hechos del Negocio}{chapter.1}% 3
-\BOOKMARK [1][-]{section.1.3}{Reglas de Negocio}{chapter.1}% 4
-\BOOKMARK [0][-]{chapter.2}{Modelo de Casos de Uso}{}% 5
-\BOOKMARK [1][-]{section.2.1}{CU1 Asignar Membres\355a}{chapter.2}% 6
-\BOOKMARK [2][-]{subsection.2.1.1}{Descripci\363n completa}{section.2.1}% 7
-\BOOKMARK [2][-]{subsection.2.1.2}{Atributos importantes}{section.2.1}% 8
-\BOOKMARK [2][-]{subsection.2.1.3}{Trayectorias del Caso de Uso}{section.2.1}% 9
-\BOOKMARK [1][-]{section.2.2}{CU2 Registrar ingreso a \341rea}{chapter.2}% 10
-\BOOKMARK [2][-]{subsection.2.2.1}{Descripci\363n completa}{section.2.2}% 11
-\BOOKMARK [2][-]{subsection.2.2.2}{Atributos importantes}{section.2.2}% 12
-\BOOKMARK [2][-]{subsection.2.2.3}{Trayectorias del Caso de Uso}{section.2.2}% 13
-\BOOKMARK [1][-]{section.2.3}{CU3 Registrar salida de un \341rea}{chapter.2}% 14
-\BOOKMARK [2][-]{subsection.2.3.1}{Descripci\363n completa}{section.2.3}% 15
-\BOOKMARK [2][-]{subsection.2.3.2}{Atributos importantes}{section.2.3}% 16
-\BOOKMARK [2][-]{subsection.2.3.3}{Trayectorias del Caso de Uso}{section.2.3}% 17
-\BOOKMARK [1][-]{section.2.4}{CU4 Registrar pago de membres\355a}{chapter.2}% 18
-\BOOKMARK [2][-]{subsection.2.4.1}{Descripci\363n completa}{section.2.4}% 19
-\BOOKMARK [2][-]{subsection.2.4.2}{Atributos importantes}{section.2.4}% 20
-\BOOKMARK [2][-]{subsection.2.4.3}{Trayectorias del Caso de Uso}{section.2.4}% 21
-\BOOKMARK [1][-]{section.2.5}{CU5 Consultar uso de \341rea.}{chapter.2}% 22
-\BOOKMARK [2][-]{subsection.2.5.1}{Descripci\363n completa}{section.2.5}% 23
-\BOOKMARK [2][-]{subsection.2.5.2}{Atributos importantes}{section.2.5}% 24
-\BOOKMARK [2][-]{subsection.2.5.3}{Trayectorias del Caso de Uso}{section.2.5}% 25
-\BOOKMARK [0][-]{chapter.3}{Modelo de la Interacci\363n}{}% 26
-\BOOKMARK [1][-]{subsection.3.0.1}{IU23 Pantalla de Control de Acceso}{chapter.3}% 27
-\BOOKMARK [0][-]{chapter.4}{Modelo del Dominio del problema}{}% 28
+\BOOKMARK [0][-]{chapter.1}{Introducci\363n}{}% 1
+\BOOKMARK [1][-]{section.1.1}{SNMP}{chapter.1}% 2
+\BOOKMARK [2][-]{subsection.1.1.1}{\277Qu\351 es la MIB}{section.1.1}% 3
+\BOOKMARK [0][-]{chapter.2}{Desarrollo}{}% 4
+\BOOKMARK [1][-]{section.2.1}{Arquitectura b\341sica de SNMP}{chapter.2}% 5
+\BOOKMARK [2][-]{subsection.2.1.1}{Instalaci\363n de la estaci\363n de gesti\363n \215Observium\216 en una m\341quina virtual}{section.2.1}% 6
+\BOOKMARK [2][-]{subsection.2.1.2}{Publicar los agentes en Observium}{section.2.1}% 7
+\BOOKMARK [2][-]{subsection.2.1.3}{Instalaci\363n y configuraci\363n de SNMP en Windows}{section.2.1}% 8
+\BOOKMARK [2][-]{subsection.2.1.4}{Instalaci\363n y configuraci\363n de SNMP en Linux}{section.2.1}% 9
+\BOOKMARK [1][-]{section.2.2}{Operaciones SNMP}{chapter.2}% 10
+\BOOKMARK [2][-]{subsection.2.2.1}{Ejercicio MIB}{section.2.2}% 11
+\BOOKMARK [1][-]{section.2.3}{Modelo de administraci\363n de red de SNMP}{chapter.2}% 12
+\BOOKMARK [0][-]{chapter.3}{Modelo de Casos de Uso}{}% 13
+\BOOKMARK [1][-]{section.3.1}{CU1 Asignar Membres\355a}{chapter.3}% 14
+\BOOKMARK [2][-]{subsection.3.1.1}{Descripci\363n completa}{section.3.1}% 15
+\BOOKMARK [2][-]{subsection.3.1.2}{Atributos importantes}{section.3.1}% 16
+\BOOKMARK [2][-]{subsection.3.1.3}{Trayectorias del Caso de Uso}{section.3.1}% 17
+\BOOKMARK [1][-]{section.3.2}{CU2 Registrar ingreso a \341rea}{chapter.3}% 18
+\BOOKMARK [2][-]{subsection.3.2.1}{Descripci\363n completa}{section.3.2}% 19
+\BOOKMARK [2][-]{subsection.3.2.2}{Atributos importantes}{section.3.2}% 20
+\BOOKMARK [2][-]{subsection.3.2.3}{Trayectorias del Caso de Uso}{section.3.2}% 21
+\BOOKMARK [1][-]{section.3.3}{CU3 Registrar salida de un \341rea}{chapter.3}% 22
+\BOOKMARK [2][-]{subsection.3.3.1}{Descripci\363n completa}{section.3.3}% 23
+\BOOKMARK [2][-]{subsection.3.3.2}{Atributos importantes}{section.3.3}% 24
+\BOOKMARK [2][-]{subsection.3.3.3}{Trayectorias del Caso de Uso}{section.3.3}% 25
+\BOOKMARK [1][-]{section.3.4}{CU4 Registrar pago de membres\355a}{chapter.3}% 26
+\BOOKMARK [2][-]{subsection.3.4.1}{Descripci\363n completa}{section.3.4}% 27
+\BOOKMARK [2][-]{subsection.3.4.2}{Atributos importantes}{section.3.4}% 28
+\BOOKMARK [2][-]{subsection.3.4.3}{Trayectorias del Caso de Uso}{section.3.4}% 29
+\BOOKMARK [1][-]{section.3.5}{CU5 Consultar uso de \341rea.}{chapter.3}% 30
+\BOOKMARK [2][-]{subsection.3.5.1}{Descripci\363n completa}{section.3.5}% 31
+\BOOKMARK [2][-]{subsection.3.5.2}{Atributos importantes}{section.3.5}% 32
+\BOOKMARK [2][-]{subsection.3.5.3}{Trayectorias del Caso de Uso}{section.3.5}% 33
+\BOOKMARK [0][-]{chapter.4}{Modelo de la Interacci\363n}{}% 34
+\BOOKMARK [1][-]{subsection.4.0.1}{IU23 Pantalla de Control de Acceso}{chapter.4}% 35
+\BOOKMARK [0][-]{chapter.5}{Modelo del Dominio del problema}{}% 36
